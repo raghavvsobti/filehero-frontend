@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-blueshade {
+  @apply bg-cover bg-center;
+  background-image: url("./assets/blueShade.jpg");
+}
+
+:root {
+  @apply bg-cover bg-center;
+  background-image: url("./assets/blueShade.jpg");
+  background-blend-mode: lighten;
+  overflow-y: clip;
+}
