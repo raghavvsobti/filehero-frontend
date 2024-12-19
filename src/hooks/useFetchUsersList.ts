@@ -6,6 +6,9 @@ export const useFetchUsersList = () => {
 	const [userOptions, setUserOptions] = useState<Options[]>([]);
 
 	useEffect(() => {
+		if (!localStorage.getItem('token')) {
+			return;
+		}
 		(async () => {
 		  const response = await fetch(`${BASE_URL}/api/users`, {
 			headers: {

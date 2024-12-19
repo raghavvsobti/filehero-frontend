@@ -112,7 +112,9 @@ function Home() {
       setTimeout(() => {
         setFile(null);
         setTag("");
-        fileInputRef.current!.value = "";
+        if (fileInputRef!.current) {
+          fileInputRef!.current!.value = "";
+        }
       }, 1000);
     }
   }, [showTagModal])

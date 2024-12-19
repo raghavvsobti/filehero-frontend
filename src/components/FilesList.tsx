@@ -36,6 +36,9 @@ export function UploadedFilesList() {
 	const navigate = useNavigate()
 
 	const fetchData = async () => {
+		if (!localStorage.getItem('data')) {
+			return;
+		}
 		const userId = JSON.parse(localStorage.getItem('data')?.toString() || "{}")?.id || ""
 		try {
 			const response = await fetch(`${BASE_URL}/file/files/${userId}`, {
