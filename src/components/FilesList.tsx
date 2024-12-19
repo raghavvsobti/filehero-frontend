@@ -151,6 +151,12 @@ export function UploadedFilesList() {
 									<span title="Share">
 										<Share2 onClick={async () => {
 											await navigator?.clipboard?.writeText(`${BASE_URL}/file/${file?.id}`)
+											const textArea = document.createElement('textarea');
+											textArea.value = `${BASE_URL}/file/${file?.id}`;
+											document.body.appendChild(textArea);
+											textArea.select();
+											document.execCommand('copy');
+											document.body.removeChild(textArea);
 											toast.success("Link copied to clipboard!")
 										}} height={20} width={20} className='cursor-pointer ml-2' />
 									</span>
