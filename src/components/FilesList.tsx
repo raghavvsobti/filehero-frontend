@@ -149,8 +149,8 @@ export function UploadedFilesList() {
 								</div>
 								<div className='flex space-x-2 h-full items-center'>
 									<span title="Share">
-										<Share2 onClick={() => {
-											navigator.clipboard.writeText(`${BASE_URL}/file/${file?.id}`)
+										<Share2 onClick={async () => {
+											await navigator?.clipboard?.writeText(`${BASE_URL}/file/${file?.id}`)
 											toast.success("Link copied to clipboard!")
 										}} height={20} width={20} className='cursor-pointer ml-2' />
 									</span>
